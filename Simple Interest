@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.Scanner;
+  class SimpleIntrest{
+    public static void main(String[] args){
+      Scanner si = new Scanner(System.in);
+      System.out.println("Enter the Principle Amount:");
+      double principle = si.nextDouble();
+      System.out.println("Enter the Rate:");
+      double rate = si.nextDouble();
+      System.out.println("Enter the Time:");
+      double time = si.nextDouble();
+   double intrest;
+   intrest=(principle*rate*time)/100;
+   System.out.println("Simple Intrest Calculation:"+intrest);
+   }
+}
