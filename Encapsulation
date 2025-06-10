@@ -1,0 +1,233 @@
+package com.demo;
+import java.util.Date;
+public class Day3{
+	private String username;
+	private String password;
+	private String email;
+	private long phnno;
+	private String address;
+	private Date createAt;
+	private Date updatedAt;
+	private boolean isActive;
+	
+    public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username=username;//this. used to mention the public 
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password=password; 	
+	}
+
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email=email;
+	}
+	
+	public long getPhnno() {
+		return phnno;
+	}
+	public void setPhnno(long phnno) {
+		this.phnno=phnno;
+	}
+	
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address=address;
+	}
+	
+	public Date getcreateAt() {
+		return createAt;
+	}
+	public void setcreateAt(Date createAt) {
+		this.createAt=createAt;
+	}
+	
+	public Date getupdatedAt() {
+		return updatedAt;
+	}
+	public void setupdateAt(Date updatedAt) {
+		this.updatedAt=updatedAt; 
+	}
+	
+	public boolean getisActive() {
+		return isActive;
+	}
+	public void setisActive(boolean isActive) {
+		this.isActive=isActive;
+	}
+}
+
+
+
+
+another file
+
+package com.demo;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Register {
+	public static void main(String args[]) {
+		Scanner in=new Scanner(System.in);
+		Day3 person1=new Day3();
+		int arr[]=new int[1];
+		ArrayList<Object> arraylist=new ArrayList<>();//wrapper class
+		boolean run=true;
+		while(run) {
+			System.out.println("1.Are you a new user");
+			System.out.println("2.Existing user");
+			System.out.println("3.Show all user details");
+			System.out.println("4.Eixst");
+			System.out.println("enter the opt:");
+			int opt=in.nextInt();
+			in.nextLine();
+			if(opt==1) {
+				System.out.println("Enter the username:");
+				String username=in.nextLine();
+				System.out.println("Enter the Password:");
+				String password=in.nextLine();
+				System.out.println("Enter the Email:");
+				String email=in.nextLine();
+				System.out.println("Enter the phnno:");
+				long phnno=in.nextLong();
+				in.nextLine();
+				System.out.println("Enter the Address:");
+				String address=in.nextLine();
+				Date createAt=new Date();
+				Date updateAt=new Date();
+				boolean isActive=true;
+		
+				person1.setUsername(username);;
+				person1.setPassword(password);
+				person1.setEmail(email);
+				person1.setPhnno(phnno);
+				person1.setAddress(address);
+				person1.setcreateAt(createAt);
+				person1.setupdateAt(updateAt);
+				person1.setisActive(isActive);
+				arraylist.add(person1);
+			}
+			else if(opt==2) {
+				System.out.println(person1.getUsername());
+				System.out.println(person1.getPassword());
+				System.out.println(person1.getEmail());
+				System.out.println(person1.getPhnno());
+				System.out.println(person1.getAddress());
+				System.out.println(person1.getcreateAt());
+				System.out.println(person1.getupdatedAt());
+				System.out.println(person1.getisActive());
+			}
+			else if(opt==3) {
+				System.out.println(arraylist);
+			}
+			else if(opt==4) {
+				run=false;
+				System.out.println("Exit");
+			}
+			else {
+				System.out.println("invalid opt");
+			}
+		}	
+		in.close();
+	}
+}
+
+package com.demo;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Register {
+	public static void main(String args[]) {
+		Scanner in=new Scanner(System.in);
+		Day3 person1=new Day3();
+		
+		ArrayList<Day3> arraylist=new ArrayList<>();//wrapper class
+		boolean run=true;
+		while(run) {
+			System.out.println("1.Are you a new user");
+			System.out.println("2.Existing user");
+			System.out.println("3.Show all user details");
+			System.out.println("4.Eixst");
+			System.out.println("enter the opt:");
+			int opt=in.nextInt();
+			in.nextLine();
+			if(opt==1) {
+				System.out.println("Enter the username:");
+				String username=in.nextLine();
+				System.out.println("Enter the Password:");
+				String password=in.nextLine();
+				System.out.println("Enter the Email:");
+				String email=in.nextLine();
+				System.out.println("Enter the phnno:");
+				long phnno=in.nextLong();
+				in.nextLine();
+				System.out.println("Enter the Address:");
+				String address=in.nextLine();
+				
+				Date createAt=new Date();
+				Date updateAt=new Date();
+				boolean isActive=true;
+		
+				person1.setUsername(username);
+				person1.setPassword(password);
+				person1.setEmail(email);
+				person1.setPhnno(phnno);
+				person1.setAddress(address);
+				person1.setcreateAt(createAt);
+				person1.setupdateAt(updateAt);
+				person1.setisActive(isActive);
+				arraylist.add(person1);
+			}
+			else if(opt==2) {
+				boolean user=false;
+				System.out.println("Enter username:");
+				String name=in.next();
+				System.out.println("Enter your password:");
+				String passwd=in.next();
+				for(int i=0;i<arraylist.size();i++) {
+					Day3 userlogin=arraylist.get(i);
+					if(userlogin.getUsername().equals(name)&&
+							userlogin.getPassword().equals(passwd)) {
+						System.out.println("Your logged in!");
+						System.out.println("your profile");
+					
+				
+				System.out.println(userlogin.getUsername());
+				System.out.println(userlogin.getPassword());
+				System.out.println(userlogin.getEmail());
+				System.out.println(userlogin.getPhnno());
+				System.out.println(userlogin.getAddress());
+				user=true;
+				break;
+			}
+				}
+				if(!user) {
+					System.out.println("invalid username and password");
+				}
+				}
+			else if(opt==3) {
+				System.out.println(arraylist);
+			}
+			else if(opt==4) {
+				run=false;
+				System.out.println("Exit");
+			}
+			else {
+				System.out.println("invalid opt");
+			}
+		}	
+		in.close();
+	}
+}
