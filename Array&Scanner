@@ -1,0 +1,62 @@
+package com.demo;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class FirstClass {
+	public static void main(String Args[]) {
+		int Arr[]= {1,2,3,4};
+		Object[] obj = new Object[5];
+		obj[0]=1;
+		obj[1]="Angel";
+		obj[2]='a';
+		obj[3]=true;
+		System.out.println(obj[1]);
+	}
+}
+
+
+// string
+public class FirstClass {
+	public static void main(String args[]) {
+	Scanner S = new Scanner(System.in);
+			int a[] = {1,2,3,4};
+		String[] obj=new String[5];
+		for(int i=0;i<obj.length;i++) {
+			obj[i] = S.next();
+		}
+		System.out.println(Arrays.toString(obj));
+	}
+}
+
+//integer*
+
+public class FirstClass {
+	public static void main(String args[]) {
+	Scanner S = new Scanner(System.in);
+			int a[] = {1,2,3,4};
+		int[] obj=new int[5];
+		for(int i=0;i<obj.length;i++) {
+			obj[i] = S.nextInt();
+		}
+		System.out.println(Arrays.toString(obj));
+	}
+}
+
+
+//multiplication
+public class FirstClass {
+	public static void main(String args[]) {
+	Scanner S = new Scanner(System.in);
+			int[] a = {1,2,3,4};
+		String[] obj=new String[5];
+ 		for(int i=0;i<obj.length;i++) {
+			obj[i] = S.nextInt();
+		}
+ 		int x=1;
+ 		for(int i=0;i<obj.length;i++) {
+ 			x=x*obj[i];
+ 		}
+		System.out.println(Arrays.toString(obj));
+		System.out.println(x);
+	}
+}
