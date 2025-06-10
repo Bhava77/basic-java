@@ -1,0 +1,45 @@
+package com.demo;
+
+import java.util.Date;
+
+
+public class Day3 {
+	public static void main(String Args[]) {
+		StringBuilder sb=new StringBuilder();
+		sb.append("hello");
+		sb.reverse();
+		System.out.println(sb);
+				
+	}
+
+}
+*/
+
+
+//OOPS concept
+//1.Abstraction
+
+//abstract keyword
+public class Day3{
+	public static void main(String args[]) {
+		Abstraction ab=new Abstraction() {
+			public void name() {
+				System.out.println("vikas");
+			}
+		};
+	}
+}
+
+abstract class Abstraction{
+	public abstract void name();//abstract method
+	public void mark() {
+		System.out.println("70%");//concrete method
+	}
+}
+//interface keyword
+interface vikas{
+	public void name();
+	public void mark() {//error
+		System.out.println("60%");//interface does not accept the concrete method
+	}
+}
