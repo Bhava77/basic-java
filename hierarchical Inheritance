@@ -1,0 +1,36 @@
+package com.demo;
+
+public class Hierarchical {
+	public static void main(String args[]) {
+		Child3 x=new Child3();
+		Child4 y=new Child4();
+		x.access();
+		y.access();
+	}
+
+}
+
+class Parent3 {
+	int i=2,j=9;
+	public void add(int i,int j) {
+		System.out.println(i+j);
+	}
+}
+
+class Child3 extends Parent3 {
+	int i=7,j=6;
+	public void access() {
+	Parent3 pr=new Parent3();
+	pr.add(i,j);
+	}
+}
+
+	
+class Child4 extends Parent3 {
+	int i=10,j=30;
+	public void access() {
+		Parent3 pr=new Parent3();
+		pr.add(i,j);
+	}
+	
+}
